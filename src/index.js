@@ -5,7 +5,6 @@ import createTestInputSystem from "./game/system/testInputSystem";
 import createBulletRenderSystem from "./game/system/bulletRenderSystem";
 import createEnvironmentRenderSystem from "./game/system/environmentRenderSystem";
 import createEntityDebugSystem from "./game/system/entityDebugSystem";
-import createBulletExpireSystem from "./game/system/bulletExpireSystem";
 
 const canvas = document.getElementById("main");
 const context = canvas.getContext("2d");
@@ -19,7 +18,6 @@ createTestInputSystem(world);
 createBulletRenderSystem(world);
 createEntityDebugSystem(world);
 createEnvironmentRenderSystem(world);
-createBulletExpireSystem(world);
 
 const update = delta => {
   context.clearRect(0, 0, 300, 600);

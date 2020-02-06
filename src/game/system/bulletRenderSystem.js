@@ -10,12 +10,12 @@ const createBulletRenderSystem = world => {
       context.fillStyle = "#ffffff";
       context.fillRect(p.x - 10, p.y, 20, 20);
       context.fillRect(
-        p.x - 10,
+        p.x,
         p.y,
-        Math.floor(
+        2,
+        -Math.floor(
           Math.sqrt((p.x - 150) * (p.x - 150) + (p.y - 50) * (p.y - 50))
-        ),
-        2
+        )
       );
     }
   });

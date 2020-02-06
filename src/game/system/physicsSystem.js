@@ -10,7 +10,23 @@ const createPhysicsSystem = world => {
     for (let id of ids) {
       const p = world.getComponent(id, "position");
       const v = world.getComponent(id, "velocity");
-      tmp.setVector(v).scale(delta);
+      if (
+        p.x > world.canvas.width ||
+        p.x < 0 ||
+        p.y < 0 ||
+        p.y > world.canvas.height
+      ) {
+        tmp
+          .setVector(
+            new Vector2(150, 50)
+              .subVector(new Vector2(p.x, p.y))
+              .nor()
+              .scale(100)
+          )
+          .scale(delta);
+      } else {
+        tmp.setVector(v).scale(delta);
+      }
       p.addVector(tmp);
     }
   });
